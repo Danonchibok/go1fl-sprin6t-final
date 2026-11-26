@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	indexHtlm      = "../index.html"
+	indexHtlm      = "index.html"
 	uploadFileName = "myFile"
 )
 
@@ -31,7 +31,7 @@ func IndexHandler(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	response.Header().Set("Content-Type", "text/html")
+	response.Header().Set("Content-Type", "text/html; charset=utf-8")
 	response.WriteHeader(http.StatusOK)
 	response.Write(buf.Bytes())
 }
