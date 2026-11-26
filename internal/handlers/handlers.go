@@ -32,6 +32,7 @@ func IndexHandler(response http.ResponseWriter, request *http.Request) {
 	}
 
 	response.Header().Set("Content-Type", "text/html")
+	response.WriteHeader(http.StatusOK)
 	response.Write(buf.Bytes())
 }
 
@@ -72,4 +73,5 @@ func UploadHandler(response http.ResponseWriter, request *http.Request) {
 	}
 
 	response.Write([]byte(text))
+	response.WriteHeader(http.StatusCreated)
 }
